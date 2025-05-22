@@ -194,10 +194,7 @@ if st.sidebar.button("Run Forecast"):
                     date_str = point["timestamp"].strftime("%Y-%m-%d")
                     label_str = point.get("label", f"{date_str} ({point['type']})")
                     value = round(point["value"], 2)
-                    url = (
-                        f"https://yourdomain.com/agent_definition?"
-                        f"date={date_str}&value={value}&label={label_str}&type={point['type']}&global={point['is_global']}"
-                    )
+                    url = f"https://azri.us/agent/{date_str}_{point['type']}.json"
                     st.markdown(f"- [{label_str} → Agent Definition]({url})")
 
             st.success("Forecasting complete.")
