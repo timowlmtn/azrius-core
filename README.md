@@ -28,4 +28,4 @@ https://data.iowa.gov/Sales-Distribution/Iowa-Liquor-Sales/m3tr-qhgy/about_data
 1. Download the data from the link above.
 2. Run the migration script to create the database and tables.
 3. Load the data into the database using Spark load-data target.
-4. 
+4. Run the UI with `make run-ui` or `streamlit run python/src/ui/streamlit_forecast_ui.py`.
