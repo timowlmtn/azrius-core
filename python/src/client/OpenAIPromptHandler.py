@@ -2,7 +2,7 @@ from client.PromptHandler import PromptHandler
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
-from ragtime.read_config import load_config, create_ai_client_from_config
+from core.read_config import load_config, create_ai_client_from_config
 
 
 class OpenAIPromptHandler(PromptHandler):
