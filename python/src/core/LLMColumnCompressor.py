@@ -50,8 +50,12 @@ Now classify these items and return the results in JSON format as a map with the
 
     def parse_response(self, response_text: str) -> dict:
         print(f"🧠 Raw LLM Response:\n{response_text}")
-        cleaned = re.sub(r"//.*$", "", response_text, flags=re.MULTILINE)
-        return json.loads(cleaned)
+        try:
+            cleaned = re.sub(r"\s*//.*?$", "", response_text, flags=re.MULTILINE)
+            return json.loads(cleaned)
+        except json.JSONDecodeError as e:
+            print(f"⚠️ Failed to parse LLM response as JSON: {e}")
+            return {}
 
     def compress(self, df: pd.DataFrame) -> pd.DataFrame:
         results = []
