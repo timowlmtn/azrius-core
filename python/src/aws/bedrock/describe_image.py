@@ -24,7 +24,7 @@ payload = {
                     "type": "image",
                     "source": {
                         "type": "base64",
-                        "media_type": "image/png",
+                        "media_type": "image/jpeg",
                         "data": encoded_image,
                     },
                 },
